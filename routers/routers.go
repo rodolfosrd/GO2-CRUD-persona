@@ -1,18 +1,19 @@
 package routers
 
 import (
-	"josmellbu/apis"
+	"rodolfosrd/apis"
+	"rodolfosrd/models"
+
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"josmellbu/models"
 )
 
 func SetupRouter() *gin.Engine {
 
 	conn, err := connectDB()
 	if err != nil {
-		panic("failed to connect database"+err.Error())
+		panic("failed to connect database" + err.Error())
 		//return
 	}
 
@@ -36,7 +37,7 @@ func connectDB() (c *gorm.DB, err error) {
 	conn.AutoMigrate(&models.Person{})
 
 	if err != nil {
-		panic("failed to connect database"+err.Error())
+		panic("failed to connect database" + err.Error())
 	}
 	return conn, err
 }

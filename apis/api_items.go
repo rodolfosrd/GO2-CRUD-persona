@@ -2,12 +2,13 @@ package apis
 
 import (
 	"net/http"
-	"josmellbu/models"
+	"rodolfosrd/models"
+
 	"github.com/gin-gonic/gin"
 )
 
 func ItemsIndex(c *gin.Context) {
-	s := models.Item{Title: "sea",Notes: "nnn"}
+	s := models.Item{Title: "sea", Notes: "nnn"}
 	/*db, _ := c.Get("db")
 	conn := db.(pgx.Conn)
 	items, err := models.GetAllItems(&conn)
@@ -15,6 +16,6 @@ func ItemsIndex(c *gin.Context) {
 		fmt.Println(err)
 	}*/
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Hola"+s.Title,
+		"message": "Hola" + s.Title,
 	})
 }

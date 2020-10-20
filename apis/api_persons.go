@@ -2,7 +2,8 @@ package apis
 
 import (
 	"net/http"
-	"josmellbu/models"
+	"rodolfosrd/models"
+
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
